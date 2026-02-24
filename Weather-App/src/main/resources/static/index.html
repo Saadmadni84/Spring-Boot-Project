@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="video-background">
+        <div class="bg-gradient"></div>
+        <div class="particles"></div>
+    </div>
+
+    <div class="container main-layout">
+
+        <!-- Left Panel: Main Display -->
+        <div class="left-panel">
+            <header>
+                <div class="search-box glass-panel-light">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="city-input" placeholder="Search for your city..." autocomplete="off">
+                    <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </header>
+
+            <main id="weather-content" class="hidden">
+                <div class="current-weather">
+                    <div class="weather-header">
+                        <h1 id="city-name" class="city-name pulse-text">City Name</h1>
+                        <p id="country-name" class="country-name">Country</p>
+                    </div>
+
+                    <div class="weather-body">
+                        <div class="temp-wrapper">
+                            <span id="temperature">--</span><span class="unit">°C</span>
+                        </div>
+                        <div class="condition-wrapper">
+                            <i id="weather-icon" class="fa-solid fa-cloud float-icon"></i>
+                            <span id="weather-condition">Condition</span>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <div id="loading" class="hidden loader-panel">
+                <div class="spinner"></div>
+                <h2>Loading forecast...</h2>
+            </div>
+
+            <div id="error-message" class="hidden error-panel glass-panel">
+                <i class="fa-solid fa-cloud-bolt"></i>
+                <p id="error-text">Weather data unavailable</p>
+            </div>
+        </div>
+
+        <!-- Right Panel: Grid Details -->
+        <div class="right-panel hidden" id="details-content">
+            <h3 class="section-title">Today's Details</h3>
+            <div class="details-grid">
+                <!-- Feels Like -->
+                <div class="detail-card glass-panel">
+                    <div class="detail-icon"><i class="fa-solid fa-temperature-half"></i></div>
+                    <div class="detail-info">
+                        <span class="detail-label">Feels Like</span>
+                        <span class="detail-val" id="feels-like">--</span>
+                    </div>
+                </div>
+                <!-- Humidity -->
+                <div class="detail-card glass-panel">
+                    <div class="detail-icon"><i class="fa-solid fa-droplet"></i></div>
+                    <div class="detail-info">
+                        <span class="detail-label">Humidity</span>
+                        <span class="detail-val" id="humidity">--</span>
+                    </div>
+                </div>
+                <!-- Wind Speed -->
+                <div class="detail-card glass-panel">
+                    <div class="detail-icon"><i class="fa-solid fa-wind"></i></div>
+                    <div class="detail-info">
+                        <span class="detail-label">Wind Speed</span>
+                        <span class="detail-val" id="wind-speed">--</span>
+                    </div>
+                </div>
+                <!-- Pressure -->
+                <div class="detail-card glass-panel">
+                    <div class="detail-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                    <div class="detail-info">
+                        <span class="detail-label">Pressure</span>
+                        <span class="detail-val" id="pressure">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-title forecast-title">3-Day Forecast</h3>
+            <div class="forecast-list" id="forecast-cards">
+                <!-- Forecast list items -->
+            </div>
+        </div>
+    </div>
+
+    <script src="/app.js"></script>
+</body>
+
+</html>
