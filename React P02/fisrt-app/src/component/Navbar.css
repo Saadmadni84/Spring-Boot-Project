@@ -1,0 +1,10 @@
+.custom-navbar {
+    min-height: 112px;
+}
+
+.custom-brand {
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    color: #fff !important;
+}
