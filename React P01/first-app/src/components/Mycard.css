@@ -1,0 +1,11 @@
+.heading{
+    color:blue;
+}
+.card{
+    width:200px;
+    background-color: wheat;
+    padding: 20px;
+    border-radius: 15px;
+    display: inline-block;
+    margin:10px;
+}
